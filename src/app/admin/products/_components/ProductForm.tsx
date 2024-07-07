@@ -13,10 +13,10 @@ const ProductForm = () => {
     const [priceInCents, setPriceInCents] = useState<number>()
 
     return (
-        <form action={addProduct} className="space-y-5 mt-10">
+        <form action={addProduct} className="space-y-6 mt-10">
             <div className="space-y-2">
                 <Label htmlFor="name" className="text-xl">Name</Label>
-                <Input id="name" name="name" type="text" required/>
+                <Input className="border-gray-300" id="name" name="name" type="text" required/>
             </div>
             <div className="space-y-2 relative">
                 <Label htmlFor="priceIncents" className="text-xl">Price In Cents</Label>
@@ -28,7 +28,7 @@ const ProductForm = () => {
                         required
                         value={priceInCents}
                         onChange={e => setPriceInCents(Number(e.target.value) || 0)}
-                        className="pr-10"
+                        className="pr-10 border-gray-300"
                     />
                     <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-muted-foreground">
                     {formatCurrency((priceInCents || 0) / 100)}
@@ -37,15 +37,15 @@ const ProductForm = () => {
             </div>
             <div className="space-y-2">
                 <Label htmlFor="description" className="text-xl">Description</Label>
-                <Textarea id="description" name="description" required/>
+                <Textarea className="border-gray-300" id="description" name="description" required/>
             </div>
             <div className="space-y-2">
                 <Label htmlFor="file" className="text-xl">File</Label>
-                <Input id="file" name="file" type="file" required/>
+                <Input className="border-gray-300" id="file" name="file" type="file" required/>
             </div>
             <div className="space-y-2">
                 <Label htmlFor="image" className="text-xl">Image</Label>
-                <Input id="image" name="image" type="file" required/>
+                <Input className="border-gray-300" id="image" name="image" type="file" required/>
             </div>
             <Button type="submit"><IoIosSave className="inline-block mr-1"/>Save</Button>
         </form>
