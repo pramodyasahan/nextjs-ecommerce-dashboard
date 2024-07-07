@@ -85,15 +85,14 @@ async function ProductsTable() {
                                     <span className="sr-only">Action</span>
                                 </DropdownMenuTrigger>
                                 <DropdownMenuContent>
-                                    <DropdownMenuItem className="flex justify-evenly" asChild>
-                                        <a href={`/admin/products/${product.id}/download`}
-                                           className="flex justify-center items-center">
-                                            <FaDownload/> Download
+                                    <DropdownMenuItem className="flex justify-items-start" asChild>
+                                        <a href={`/admin/products/${product.id}/download`}>
+                                            <FaDownload className="mr-3"/> Download
                                         </a>
                                     </DropdownMenuItem>
-                                    <DropdownMenuItem className="flex justify-normal" asChild>
+                                    <DropdownMenuItem className="flex justify-items-start" asChild>
                                         <Link href={`/admin/products/${product.id}/edit`}><RiEdit2Fill
-                                            className="mx-2"/> Edit</Link>
+                                            className="mr-3"/> Edit</Link>
                                     </DropdownMenuItem>
                                     <ActiveToggleDropdownItem id={product.id}
                                                               isAvailableForPurchase={product.isAvailableForPurchase}/>

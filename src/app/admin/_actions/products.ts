@@ -4,8 +4,6 @@ import {z} from "zod";
 import db from "@/db/db";
 import fs from "fs/promises"
 import {notFound, redirect} from "next/navigation";
-import {Simulate} from "react-dom/test-utils";
-import dragLeave = Simulate.dragLeave;
 
 const fileSchema = z.instanceof(File, {message: "Required"})
 const imageSchema = fileSchema.refine(

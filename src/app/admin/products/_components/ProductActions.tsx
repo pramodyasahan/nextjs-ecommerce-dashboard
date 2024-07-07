@@ -15,15 +15,15 @@ export function ActiveToggleDropdownItem({id, isAvailableForPurchase,}: {
     const [isPending, startTransition] = useTransition()
     const router = useRouter()
     return (
-        <DropdownMenuItem className="flex justify-evenly"
+        <DropdownMenuItem className="flex justify-items-start"
                           disabled={isPending}
                           onClick={() => {
                               startTransition(async () => {
                                   await toggleProductAvailability(id, !isAvailableForPurchase)
                                   router.refresh()
                               })
-                          }}>{isAvailableForPurchase ? <><GiSightDisabled/>Deactivate</> : <><FaEye
-            className="mx-1"/>Activate</>}
+                          }}>{isAvailableForPurchase ? <><GiSightDisabled className="mr-3"/>Deactivate</> : <><FaEye
+            className="mr-3"/>Activate</>}
         </DropdownMenuItem>
     )
 }
@@ -32,7 +32,7 @@ export function DeleteDropdownItem({id, disabled,}: { id: string, disabled: bool
     const [isPending, startTransition] = useTransition()
     const router = useRouter()
     return (
-        <DropdownMenuItem className="flex justify-normal"
+        <DropdownMenuItem className="flex justify-items-start"
                           variant="destructive"
                           disabled={disabled || isPending}
                           onClick={() => {
@@ -40,7 +40,7 @@ export function DeleteDropdownItem({id, disabled,}: { id: string, disabled: bool
                                   await deleteProduct(id)
                                   router.refresh()
                               })
-                          }}><MdDelete className="mx-2"/>Delete
+                          }}><MdDelete className="mr-3"/>Delete
         </DropdownMenuItem>
     )
 }
