@@ -11,6 +11,7 @@ import {DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger
 import {FaDownload} from "react-icons/fa";
 import {RiEdit2Fill} from "react-icons/ri";
 import {ActiveToggleDropdownItem, DeleteDropdownItem} from "@/app/admin/products/_components/ProductActions";
+import {green} from "next/dist/lib/picocolors";
 
 const AdminProductsPage = () => {
     return (
@@ -60,12 +61,12 @@ async function ProductsTable() {
                             {product.isAvailableForPurchase ? (
                                 <>
                                     <span className="sr-only">Available</span>
-                                    <CheckCircle2/>
+                                    <CheckCircle2 className="stroke-green-700"/>
                                 </>
                             ) : (
                                 <>
                                     <span className="sr-only">Unavailable</span>
-                                    <XCircle/>
+                                    <XCircle className="stroke-destructive"/>
                                 </>
                             )}
                         </TableCell>
@@ -85,12 +86,14 @@ async function ProductsTable() {
                                     <span className="sr-only">Action</span>
                                 </DropdownMenuTrigger>
                                 <DropdownMenuContent>
-                                    <DropdownMenuItem className="flex justify-items-start" asChild>
+                                    <DropdownMenuItem className="flex justify-items-start text-green-600"
+                                                      variant="green" asChild>
                                         <a href={`/admin/products/${product.id}/download`}>
                                             <FaDownload className="mr-3"/> Download
                                         </a>
                                     </DropdownMenuItem>
-                                    <DropdownMenuItem className="flex justify-items-start" asChild>
+                                    <DropdownMenuItem className="flex justify-items-start text-yellow-600"
+                                                      variant="yellow" asChild>
                                         <Link href={`/admin/products/${product.id}/edit`}><RiEdit2Fill
                                             className="mr-3"/> Edit</Link>
                                     </DropdownMenuItem>

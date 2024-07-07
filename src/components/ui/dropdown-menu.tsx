@@ -83,6 +83,9 @@ const dropdownMenuItemVariants = cva(
                 default: "focus:bg-accent focus:text-accent-foreground0",
                 destructive:
                     "focus:bg-destructive focus:text-destructive-foreground text-destructive",
+                green: "text-green-600 hover:text-white hover:bg-green-600 focus:bg-green-600 focus:text-white",
+                yellow: "text-yellow-500 hover:text-white hover:bg-yellow-500 focus:bg-yellow-500 focus:text-white",
+                blue: "text-blue-600 hover:text-white hover:bg-blue-600 focus:bg-blue-600 focus:text-white",
             },
         },
         defaultVariants: {
@@ -96,7 +99,7 @@ const DropdownMenuItem = React.forwardRef<
     React.ElementRef<typeof DropdownMenuPrimitive.Item>,
     React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.Item> & {
     inset?: boolean
-    variant?: "default" | "destructive"
+    variant?: "default" | "destructive" | "green" | "yellow" | "blue";
 }
 >(({className, inset, variant, ...props}, ref) => (
     <DropdownMenuPrimitive.Item

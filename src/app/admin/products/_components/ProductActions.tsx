@@ -16,6 +16,7 @@ export function ActiveToggleDropdownItem({id, isAvailableForPurchase,}: {
     const router = useRouter()
     return (
         <DropdownMenuItem className="flex justify-items-start"
+                          variant="blue"
                           disabled={isPending}
                           onClick={() => {
                               startTransition(async () => {
