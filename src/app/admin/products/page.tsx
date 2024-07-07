@@ -11,14 +11,13 @@ import {DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger
 import {FaDownload} from "react-icons/fa";
 import {RiEdit2Fill} from "react-icons/ri";
 import {ActiveToggleDropdownItem, DeleteDropdownItem} from "@/app/admin/products/_components/ProductActions";
-import {green} from "next/dist/lib/picocolors";
 
 const AdminProductsPage = () => {
     return (
         <>
             <div className="flex justify-between items-center gap-4">
                 <PageHeader>Products</PageHeader>
-                <Button>
+                <Button className="text-white font-bold py-2 px-4 rounded-xl">
                     <Link href="/admin/products/new"><IoMdAddCircleOutline
                         className="inline-block size-4 mb-0.5 mr-1.5"/>Add
                         Product</Link>
