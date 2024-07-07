@@ -2,6 +2,8 @@ import {Nav, NavLink} from "@/components/Nav";
 import React from "react";
 import {MdDashboard} from "react-icons/md";
 
+export const dynamic = "force-dynamic"
+
 export default function AdminLayout({
                                         children,
                                     }: Readonly<{
