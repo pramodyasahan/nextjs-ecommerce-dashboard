@@ -10,7 +10,7 @@ export default function AdminLayout({
     return <>
         <Nav>
             <NavLink href="/admin">
-                <MdDashboard className="inline-block mr-1 mb-0.5" /> Dashboard
+                <MdDashboard className="inline-block mr-1 mb-0.5"/> Dashboard
             </NavLink>
             <NavLink href="/admin/products">Products</NavLink>
             <NavLink href="/admin/users">Customers</NavLink>
